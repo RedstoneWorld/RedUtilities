@@ -3,7 +3,7 @@ package de.redstoneworld.redutilities.files;
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.configuration.Configuration;
 
-public class Reader {
+public class FileReader {
     
     Configuration configuration;
     

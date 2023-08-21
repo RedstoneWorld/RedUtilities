@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 
 import static de.redstoneworld.redutilities.input.InputFormat.isRationaleNumber;
 
-public class ValueRange {
+public class ValueAnalyzer {
 
     public static boolean isValidYaw(String cmdInput) {
         if (!isRationaleNumber(cmdInput)) return false;
