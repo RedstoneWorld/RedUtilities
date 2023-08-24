@@ -29,3 +29,7 @@ dependencies {
         implementation 'de.redstoneworld.redutilities:RedUtilities:%version%'
         }
 ```
+
+# Javadoc
+
+You can find the Javadoc of RedUtilities [here](https://redstoneworld.github.io/RedUtilities/javadoc).
