@@ -8,18 +8,26 @@ public class FileReader {
     Configuration configuration;
     
     // Configuration sections following the standard structure of the RedstoneWorld plugins.
-    final String configPartMessages = "messages";
-    final String configPartFeatures = "features";
+    private String configPartMessages = "messages";
+    private String configPartFeatures = "features";
     
     public void setConfig(Configuration configuration) {
         this.configuration = configuration;
     }
 
-    public String getConfigPartMessages() {
+    public void setConfigPartMessages(String configPartMessages) {
+        this.configPartMessages = configPartMessages;
+    }
+
+    public void setConfigPartFeatures(String configPartFeatures) {
+        this.configPartFeatures = configPartFeatures;
+    }
+
+    private String getConfigPartMessages() {
         return configPartMessages;
     }
 
-    public String getConfigPartFeatures() {
+    private String getConfigPartFeatures() {
         return configPartFeatures;
     }
 
@@ -33,7 +41,7 @@ public class FileReader {
      * @return the config messages (String)
      */
     public String getLang(String key, String... args) {
-        String lang = configuration.getString(configPartMessages + key, "&cUnknown language key &6" + key);
+        String lang = configuration.getString(configPartMessages + "." + key, "&cUnknown language key &6" + key);
         for (int i = 0; i + 1 < args.length; i += 2) {
             lang = lang.replace("%" + args[i] + "%", args[i + 1]);
         }
@@ -41,15 +49,15 @@ public class FileReader {
     }
 
     public boolean getBooleanOption(String key) {
-        return configuration.getBoolean(configPartFeatures + key);
+        return configuration.getBoolean(configPartFeatures + "." + key);
     }
 
     public int getIntOption(String key) {
-        return configuration.getInt(configPartFeatures + key);
+        return configuration.getInt(configPartFeatures + "." + key);
     }
 
     public String getStringOption(String key) {
-        return configuration.getString(configPartFeatures + key);
+        return configuration.getString(configPartFeatures + "." + key);
     }
     
 }
