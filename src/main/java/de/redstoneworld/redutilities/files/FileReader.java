@@ -15,10 +15,20 @@ public class FileReader {
         this.configuration = configuration;
     }
 
+    /**
+     * This method sets the configuration part for messages.
+     * 
+     * @param configPartMessages (String) config part
+     */
     public void setConfigPartMessages(String configPartMessages) {
         this.configPartMessages = configPartMessages;
     }
 
+    /**
+     * This method sets the configuration part for features.
+     *
+     * @param configPartFeatures (String) config part
+     */
     public void setConfigPartFeatures(String configPartFeatures) {
         this.configPartFeatures = configPartFeatures;
     }
