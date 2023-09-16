@@ -18,7 +18,6 @@ public class ActionLogger {
     private String workPath;
 
     // log message prefix
-
     private String serverName;
 
     public ActionLogger() {
