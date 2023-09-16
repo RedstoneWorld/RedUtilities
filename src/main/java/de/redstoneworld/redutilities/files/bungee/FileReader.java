@@ -1,7 +1,7 @@
-package de.redstoneworld.redutilities.files;
+package de.redstoneworld.redutilities.files.bungee;
 
 import net.md_5.bungee.api.ChatColor;
-import org.bukkit.configuration.Configuration;
+import net.md_5.bungee.config.Configuration;
 
 public class FileReader {
     
