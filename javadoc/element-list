@@ -1,4 +1,5 @@
-de.redstoneworld.redutilities.files
+de.redstoneworld.redutilities.files.bukkit
+de.redstoneworld.redutilities.files.bungee
 de.redstoneworld.redutilities.input
 de.redstoneworld.redutilities.logger
 de.redstoneworld.redutilities.math
