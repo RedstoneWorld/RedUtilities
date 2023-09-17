@@ -15,6 +15,10 @@ public class FileReader {
         this.configuration = configuration;
     }
 
+    public Configuration getConfiguration() {
+        return configuration;
+    }
+
     /**
      * This method sets the configuration part for messages.
      * 
