@@ -13,5 +13,16 @@ public class Calculation {
         // round up the result:
         return (long) Math.ceil(result);
     }
-    
+
+    /**
+     * This method rounds up the input to the desired accuracy. The normal 
+     * round function of Math always rounds up or down to "1".
+     * 
+     * @param input value
+     * @param x rounding accuracy (e.g. "0.5")
+     * @return the rounded value
+     */
+    private static float roundToX(float input, int x) {
+        return (Math.round(input / x)) * x;
+    }
 }
