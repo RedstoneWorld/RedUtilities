@@ -18,11 +18,11 @@ public class Calculation {
      * This method rounds up the input to the desired accuracy. The normal 
      * round function of Math always rounds up or down to "1".
      * 
-     * @param input value
-     * @param x rounding accuracy (e.g. "0.5")
-     * @return the rounded value
+     * @param input (double) value
+     * @param x (float) rounding accuracy (e.g. "0.5")
+     * @return (float) the rounded value
      */
-    public static float roundToX(float input, int x) {
+    public static float roundToX(double input, float x) {
         return (Math.round(input / x)) * x;
     }
 }
