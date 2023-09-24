@@ -1,5 +1,7 @@
 package de.redstoneworld.redutilities.logger;
 
+import de.redstoneworld.redutilities.misc.Formatter;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -106,11 +108,10 @@ public class ActionLogger {
      *
      * @return String with the current time info
      */
-    static String getDateAndTime() {
-
+    private static String getDateAndTime() {
         Date timestamp = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
-        return simpleDateFormat.format(timestamp);
+
+        return Formatter.getTimeString(timestamp, "dd.MM.yyyy, HH:mm");
     }
 
 }
