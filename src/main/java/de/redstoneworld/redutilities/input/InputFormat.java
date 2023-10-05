@@ -46,7 +46,10 @@ public class InputFormat {
 
     /**
      * This method validate the input string and check if it's a
-     * valid rational number.
+     * valid rational number. Flexible inputs are allowed, which 
+     * improves the usability.
+     * 
+     * (Input-Formatter: 'Formatter.getRationaleNumberValue')
      *
      * @return 'true' if the input is a rationale number
      */

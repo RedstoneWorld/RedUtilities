@@ -30,5 +30,28 @@ public class Formatter {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
         return simpleDateFormat.format(date);
     }
+
+    /**
+     * This method reforms the rationale number spelling and convert it 
+     * to a float number. Flexible inputs are allowed, which improves 
+     * the usability.
+     * 
+     * @param cmdInput the rationale number with one of all supported spellings
+     * @return (float) the formatted rationale number (decimal value)
+     */
+    private float getRationaleNumberValue(String cmdInput) {
+
+        // replace decimal separator of DE
+        cmdInput = cmdInput.replace(",", ".");
+
+        // replace decimal input as short write-style without zero at beginning
+        // (e.g. "/speed .4" --> "/speed 0.4")
+        if (cmdInput.matches("^[-\\+]?[\\.,][0-9]+$")) {
+            cmdInput = cmdInput.replace(".", "0.");
+        }
+
+        // convert the string to a float number
+        return Float.parseFloat(cmdInput);
+    }
     
 }
