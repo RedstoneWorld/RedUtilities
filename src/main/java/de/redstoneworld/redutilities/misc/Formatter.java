@@ -39,7 +39,7 @@ public class Formatter {
      * @param cmdInput the rationale number with one of all supported spellings
      * @return (float) the formatted rationale number (decimal value)
      */
-    private float getRationaleNumberValue(String cmdInput) {
+    public static float getRationaleNumberValue(String cmdInput) {
 
         // replace decimal separator of DE
         cmdInput = cmdInput.replace(",", ".");
