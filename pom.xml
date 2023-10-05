@@ -6,7 +6,7 @@
 
     <groupId>de.redstoneworld.redutilities</groupId>
     <artifactId>RedUtilities</artifactId>
-    <version>0.0.8-Snapshot</version>
+    <version>0.0.9-Snapshot</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
