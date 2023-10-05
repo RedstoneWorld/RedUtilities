@@ -32,14 +32,14 @@ public class Formatter {
     }
 
     /**
-     * This method reforms the rationale number spelling and convert it 
+     * This method reforms the rational number spelling and convert it 
      * to a float number. Flexible inputs are allowed, which improves 
      * the usability.
      * 
-     * @param cmdInput the rationale number with one of all supported spellings
-     * @return (float) the formatted rationale number (decimal value)
+     * @param cmdInput the rational number with one of all supported spellings
+     * @return (float) the formatted rational number (decimal value)
      */
-    public static float getRationaleNumberValue(String cmdInput) {
+    public static float getRationalNumberValue(String cmdInput) {
 
         // replace decimal separator of DE
         cmdInput = cmdInput.replace(",", ".");

@@ -37,7 +37,7 @@ public class InputFormat {
      *
      * @return 'true' if the input is an integer
      */
-    public static boolean isInteger(String cmdInput) {
+    public static boolean isIntegerNumber(String cmdInput) {
         if (cmdInput.matches("^[-\\+]?[0-9]+$")) {
             return true;
         }
@@ -49,11 +49,11 @@ public class InputFormat {
      * valid rational number. Flexible inputs are allowed, which 
      * improves the usability.
      * 
-     * (Input-Formatter: 'Formatter.getRationaleNumberValue')
+     * (Input-Formatter: 'Formatter.getRationalNumberValue')
      *
-     * @return 'true' if the input is a rationale number
+     * @return 'true' if the input is a rational number
      */
-    public static boolean isRationaleNumber(String cmdInput) {
+    public static boolean isRationalNumber(String cmdInput) {
         if (cmdInput.matches("^[-\\+]?[0-9]*[\\.,]?[0-9]+$")) {
             return true;
         }
