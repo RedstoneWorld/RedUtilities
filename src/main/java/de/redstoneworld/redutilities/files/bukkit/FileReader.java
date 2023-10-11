@@ -1,6 +1,6 @@
 package de.redstoneworld.redutilities.files.bukkit;
 
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.Configuration;
 
 public class FileReader {
@@ -50,15 +50,12 @@ public class FileReader {
      * the minecraft color codes with a valid character.
      *
      * @param key YAML key
-     * @param colorCodeReplace should the native color-code identifier "§" be replaced with "&"
      * @param args placeholder without "%" and value for the placeholder
      *
      * @return the config messages (String)
      */
-    public String getLang(Boolean colorCodeReplace, String key, String... args) {
-        if (colorCodeReplace) return ChatColor.translateAlternateColorCodes('&', getLang(key, args));
-        
-        return getLang(key, args);
+    public String getLang(String key, String... args) {
+        return getLang(true, key, args);
     }
 
     /**
@@ -66,16 +63,19 @@ public class FileReader {
      * the minecraft color codes with a valid character.
      *
      * @param key YAML key
+     * @param colorCodeReplace should the native color-code identifier "§" be replaced with "&"
      * @param args placeholder without "%" and value for the placeholder
      *
      * @return the config messages (String)
      */
-    public String getLang(String key, String... args) {
+    public String getLang(Boolean colorCodeReplace, String key, String... args) {
         String lang = configuration.getString(configPartMessages + "." + key, "&cUnknown language key &6" + key);
         for (int i = 0; i + 1 < args.length; i += 2) {
             lang = lang.replace("%" + args[i] + "%", args[i + 1]);
         }
-        
+
+        if (colorCodeReplace) return ChatColor.translateAlternateColorCodes('&', lang);
+
         return lang;
     }
 
