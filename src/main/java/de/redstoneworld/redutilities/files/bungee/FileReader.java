@@ -50,6 +50,22 @@ public class FileReader {
      * the minecraft color codes with a valid character.
      *
      * @param key YAML key
+     * @param colorCodeReplace should the native color-code identifier "§" be replaced with "&"
+     * @param args placeholder without "%" and value for the placeholder
+     *
+     * @return the config messages (String)
+     */
+    public String getLang(Boolean colorCodeReplace, String key, String... args) {
+        if (colorCodeReplace) return ChatColor.translateAlternateColorCodes('&', getLang(key, args));
+
+        return getLang(key, args);
+    }
+
+    /**
+     * This method reads the specific messages in config.yml and replaces
+     * the minecraft color codes with a valid character.
+     *
+     * @param key YAML key
      * @param args placeholder without "%" and value for the placeholder
      *
      * @return the config messages (String)
@@ -59,7 +75,8 @@ public class FileReader {
         for (int i = 0; i + 1 < args.length; i += 2) {
             lang = lang.replace("%" + args[i] + "%", args[i + 1]);
         }
-        return ChatColor.translateAlternateColorCodes('&', lang);
+
+        return lang;
     }
 
     public boolean getBooleanOption(String key) {
