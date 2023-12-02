@@ -63,7 +63,7 @@ public class FileReader {
      * the minecraft color codes with a valid character.
      *
      * @param key YAML key
-     * @param colorCodeReplace should the native color-code identifier "§" be replaced with "&"
+     * @param colorCodeReplace should the native color-code identifier "§" be replaced with "&amp;"
      * @param args placeholder without "%" and value for the placeholder
      *
      * @return the config messages (String)
