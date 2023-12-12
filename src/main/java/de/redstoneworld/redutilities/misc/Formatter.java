@@ -53,5 +53,51 @@ public class Formatter {
         // convert the string to a float number
         return Float.parseFloat(cmdInput);
     }
+
+    /**
+     * This method outputs the rational number as a string.
+     * The decimal separator remains at the point (".") .
+     * 
+     * @param floatValue the rational number
+     * @return (String) the formatted string.
+     */
+    public static String getRationalNumberMsg(float floatValue) {
+        return getRationalNumberMsg(floatValue, ".");
+    }
+
+    /**
+     * This method outputs the rational number as a string.
+     * The decimal separator remains at the point (".") .
+     * 
+     * @param doubleValue the rational number
+     * @return (String) the formatted string.
+     */
+    public static String getRationalNumberMsg(Double doubleValue) {
+        return getRationalNumberMsg(doubleValue, ".");
+    }
+
+    /**
+     * This method outputs the rational number as a string.
+     * The decimal separator can also be specified.
+     * 
+     * @param floatValue the rational number
+     * @param decimalSeparator the decimal separator
+     * @return (String) the formatted string.
+     */
+    public static String getRationalNumberMsg(float floatValue, String decimalSeparator) {
+        return String.valueOf(floatValue).replace(".", decimalSeparator);
+    }
+
+    /**
+     * This method outputs the rational number as a string.
+     * The decimal separator can also be specified.
+     * 
+     * @param doubleValue the rational number
+     * @param decimalSeparator the decimal separator
+     * @return (String) the formatted string.
+     */
+    public static String getRationalNumberMsg(Double doubleValue, String decimalSeparator) {
+        return String.valueOf(doubleValue).replace(".", decimalSeparator);
+    }
     
 }
