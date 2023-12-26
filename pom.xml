@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>de.redstoneworld.redutilities</groupId>
-    <artifactId>RedUtilities</artifactId>
+    <artifactId>redutilities</artifactId>
     <version>0.0.11-Snapshot</version>
 
     <properties>
