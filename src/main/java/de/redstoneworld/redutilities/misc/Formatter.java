@@ -33,13 +33,13 @@ public class Formatter {
 
     /**
      * This method reforms the rational number spelling and convert it 
-     * to a float number. Flexible inputs are allowed, which improves 
+     * to a double number. Flexible inputs are allowed, which improves 
      * the usability.
      * 
      * @param cmdInput the rational number with one of all supported spellings
-     * @return (float) the formatted rational number (decimal value)
+     * @return (double) the formatted rational number (decimal value)
      */
-    public static float getRationalNumberValue(String cmdInput) {
+    public static double getRationalNumberValue(String cmdInput) {
 
         // replace decimal separator of DE
         cmdInput = cmdInput.replace(",", ".");
@@ -50,8 +50,8 @@ public class Formatter {
             cmdInput = cmdInput.replace(".", "0.");
         }
 
-        // convert the string to a float number
-        return Float.parseFloat(cmdInput);
+        // convert the string to a double number
+        return Double.parseDouble(cmdInput);
     }
 
     /**
