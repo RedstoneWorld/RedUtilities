@@ -14,9 +14,9 @@ Add the following to your Java project `pom.xml` file:
 
 ```xml
 <dependency>
-  <groupId>de.redstoneworld.redutilities</groupId>
-  <artifactId>RedUtilities</artifactId>
-  <version>%version%</version>
+    <groupId>de.redstoneworld.redutilities</groupId>
+    <artifactId>RedUtilities</artifactId>
+    <version>%version%</version>
 </dependency>
 ```
 
@@ -26,8 +26,8 @@ Add the following to your Java project `build.gradle` file:
 
 ```text
 dependencies {
-        implementation 'de.redstoneworld.redutilities:RedUtilities:%version%'
-        }
+    implementation 'de.redstoneworld.redutilities:RedUtilities:%version%'
+}
 ```
 
 # Javadoc
