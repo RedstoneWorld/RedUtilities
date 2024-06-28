@@ -6,7 +6,7 @@ RedUtilities is a small Java toolkit for Minecraft plugin development. The prepa
 
 **Note:** Replace `%version%` with the latest version of RedUtilities:
 
-[![Latest version of 'RedUtilities' @ Cloudsmith](https://api-prd.cloudsmith.io/v1/badges/version/redstoneworld/RedUtilities/maven/RedUtilities/latest/a=noarch;xg=de.redstoneworld.redutilities/?render=true&show_latest=true)](https://cloudsmith.io/~redstoneworld/repos/RedUtilities/packages/detail/maven/RedUtilities/latest/a=noarch;xg=de.redstoneworld.redutilities/)
+[![Latest version of 'redutilities' @ Cloudsmith](https://api-prd.cloudsmith.io/v1/badges/version/redstoneworld/RedUtilities/maven/redutilities/latest/a=noarch;xg=de.redstoneworld.redutilities/?render=true&show_latest=true)](https://cloudsmith.io/~redstoneworld/repos/RedUtilities/packages/detail/maven/redutilities/latest/a=noarch;xg=de.redstoneworld.redutilities/)
 
 ## Usage with Maven
 
