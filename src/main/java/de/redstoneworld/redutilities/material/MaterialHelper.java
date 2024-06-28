@@ -14,9 +14,14 @@ import java.util.regex.Pattern;
 public class MaterialHelper {
 
     /**
-     * This method returns a list of materials that can be defined with 
-     * a set of inputs in the form of a Material-Tag, Regex or the 
-     * normal Material-Name specification.
+     * This method returns a list of materials based on the Set of input strings. Various formats 
+     * of material specifications are supported here:
+     * 
+     * <li>Material-Tag via "tag=" (see <a href="https://jd.papermc.io/paper/1.21/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
+     * <a href="https://minecraft.wiki/w/Tag">Minecraft-Wiki</a> for the tag lists)</li>
+     * <li>Regex via "r="</li>
+     * <li>MATERIAL names with wildcards via "*"</li>
+     * <li>MATERIAL names</li>
      * 
      * Basic-Design by <a href="https://github.com/Phoenix616">Phoenix616</a>
      * 
@@ -36,9 +41,14 @@ public class MaterialHelper {
     }
     
     /**
-     * This method returns a list of materials that can be defined with 
-     * a (single) input in the form of a Material-Tag, Regex or the 
-     * normal Material-Name specification.
+     * This method returns a list of materials based on the input string. Various formats 
+     * of material specifications are supported here:
+     * 
+     * <li>Material-Tag via "tag=" (see <a href="https://jd.papermc.io/paper/1.21/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
+     * <a href="https://minecraft.wiki/w/Tag">Minecraft-Wiki</a> for the tag lists)</li>
+     * <li>Regex via "r="</li>
+     * <li>MATERIAL names with wildcards via "*"</li>
+     * <li>MATERIAL names</li>
      * 
      * Basic-Design by <a href="https://github.com/Phoenix616">Phoenix616</a>
      * 
