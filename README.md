@@ -25,6 +25,13 @@ Add the following to your Java project `pom.xml` file:
 Add the following to your Java project `build.gradle` file:
 
 ```text
+repositories {
+    maven {
+        name = 'cloudsmith'
+        url = 'https://dl.cloudsmith.io/public/redstoneworld/RedUtilities/maven/'
+    }
+}
+
 dependencies {
     implementation 'de.redstoneworld.redutilities:redutilities:%version%'
 }
