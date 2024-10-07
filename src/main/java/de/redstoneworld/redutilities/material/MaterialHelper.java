@@ -44,7 +44,7 @@ public class MaterialHelper {
      * This method returns a list of materials based on the input string. Various formats 
      * of material specifications are supported here:
      * 
-     * <li>Material-Tag via "tag=" (see <a href="https://jd.papermc.io/paper/1.21/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
+     * <li>Material-Tag via "tag=" (see <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
      * <a href="https://minecraft.wiki/w/Tag">Minecraft-Wiki</a> for the tag lists)</li>
      * <li>Regex via "r="</li>
      * <li>MATERIAL names with wildcards via "*"</li>
