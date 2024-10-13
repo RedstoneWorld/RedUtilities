@@ -44,7 +44,7 @@ public class MaterialHelper {
      * This method returns a list of materials based on the input string. Various formats 
      * of material specifications are supported here:
      * 
-     * <li>Material-Tag via "tag=" (see <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
+     * <li>Material-Tag starting with "#" or "tag=" (see <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
      * <a href="https://minecraft.wiki/w/Tag">Minecraft-Wiki</a> for the tag lists)</li>
      * <li>Regex via "r="</li>
      * <li>MATERIAL names with wildcards via "*"</li>
@@ -63,17 +63,30 @@ public class MaterialHelper {
         // Material-Tag Definition:
         // - https://jd.papermc.io/paper/1.21/org/bukkit/Tag.html
         // - https://minecraft.wiki/w/Tag
-        if (input.startsWith("tag=")) {
-            String nameSpace = NamespacedKey.MINECRAFT;
-            String tagName = input.substring(4).toLowerCase();
+        if ((input.startsWith("#")) || (input.startsWith("tag="))) {
+            String nameSpace = "";
+            String tagName = "";
+            
+            if (input.startsWith("#")) {
+                tagName = input.substring(1).toLowerCase();
+            } else if (input.startsWith("tag=")) {
+                tagName = input.substring(4).toLowerCase();
+            }
+            
             String[] parts = tagName.split(":");
-            if (parts.length == 2) {
+            if (parts.length == 1) {
+                nameSpace = NamespacedKey.MINECRAFT;
+                tagName = parts[0].toLowerCase();
+            } else if (parts.length == 2) {
                 nameSpace = parts[0].toLowerCase();
                 tagName = parts[1].toLowerCase();
             }
             
+            Tag<Material> tag;
+            
             // Blocks:
-            Tag<Material> tag = Bukkit.getTag(Tag.REGISTRY_BLOCKS, new NamespacedKey(nameSpace, tagName), Material.class);
+            tag = Bukkit.getTag(Tag.REGISTRY_BLOCKS, new NamespacedKey(nameSpace, tagName), Material.class);
+            
             // Items:
             if (tag == null) {
                 tag = Bukkit.getTag(Tag.REGISTRY_ITEMS, new NamespacedKey(nameSpace, tagName), Material.class);
@@ -96,6 +109,7 @@ public class MaterialHelper {
         // Regex Definition:
         } else if (input.startsWith("r=") || input.contains("*")) {
             Pattern p = Pattern.compile(input.startsWith("r=") ? input.substring(2) : input.replace("*", "(.*)"));
+            
             for (Material material : Material.values()) {
                 if (p.matcher(material.name()).matches()) {
                     materials.add(material);
