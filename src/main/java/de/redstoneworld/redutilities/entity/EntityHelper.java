@@ -35,12 +35,19 @@ public class EntityHelper {
      * This method returns a list of EntityTypes based on the input string. Various formats 
      * of specifications are supported here:
      * 
-     * <li>EntityType-Tag starting with "#" or "tag=" (see <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
-     * <a href="https://minecraft.wiki/w/Tag#Entity_type_tags_2">Minecraft-Wiki</a> for the EntityType Tag lists)</li>
+     * <ul>
+     * <li>EntityType-Tag starting with "#" or "tag=" (see <a href="https://minecraft.wiki/w/Tag#Entity_type_tags_2">Minecraft-Wiki</a> 
+     * <i>(Vanilla Minecraft implementation)</i> and <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> 
+     * <i>(Bukkit implementation)</i> for the EntityType-Tag lists)</li>
      * <li>Regex via "r="</li>
-     * <li>ENTITY-TYPE names with wildcards via "*"</li>
-     * <li>ENTITY-TYPE names</li>
+     * <li>clean ENTITY-TYPE names with wildcards via "*"</li>
+     * <li>clean ENTITY-TYPE names</li>
+     * </ul>
      * 
+     * <b>Note:</b> Currently, the expanding <a href="https://jd.papermc.io/paper/1.21.1/io/papermc/paper/tag/EntityTags.html">EntitySetTags</a> 
+     * from PaperMC are not supported here.
+     * 
+     * <br/><br/>
      * Basic-Design by <a href="https://github.com/Phoenix616">Phoenix616</a>
      * 
      * @param input (String) the input String

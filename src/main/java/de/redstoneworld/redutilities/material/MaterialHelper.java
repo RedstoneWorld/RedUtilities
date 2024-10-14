@@ -35,12 +35,16 @@ public class MaterialHelper {
      * This method returns a list of Materials based on the input string. Various formats 
      * of specifications are supported here:
      * 
-     * <li>Material-Tag starting with "#" or "tag=" (see <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
-     * <a href="https://minecraft.wiki/w/Tag#Block_tags_2">Minecraft-Wiki</a> for the Material Tag lists)</li>
+     * <ul>
+     * <li>Material-Tag starting with "#" or "tag=" (see <a href="https://minecraft.wiki/w/Tag#Block_tags_2">Minecraft-Wiki</a> 
+     * <i>(Vanilla Minecraft implementation)</i> and <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> 
+     * <i>(Bukkit implementation)</i> for the Material-Tag lists)</li>
      * <li>Regex via "r="</li>
-     * <li>MATERIAL names with wildcards via "*"</li>
-     * <li>MATERIAL names</li>
+     * <li>clean MATERIAL names with wildcards via "*"</li>
+     * <li>clean MATERIAL names</li>
+     * </ul>
      * 
+     * <br/><br/>
      * Basic-Design by <a href="https://github.com/Phoenix616">Phoenix616</a>
      * 
      * @param input (String) the input String
