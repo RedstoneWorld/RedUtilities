@@ -36,9 +36,9 @@ public class EntityHelper {
      * of specifications are supported here:
      * 
      * <ul>
-     * <li>EntityType-Tag starting with "#" or "tag=" (see <a href="https://minecraft.wiki/w/Tag#Entity_type_tags_2">Minecraft-Wiki</a> 
+     * <li>EntityType-Tag starting with "#" or "tag=" - see <a href="https://minecraft.wiki/w/Tag#Entity_type_tags_2">Minecraft-Wiki</a> 
      * <i>(Vanilla Minecraft implementation)</i> and <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> 
-     * <i>(Bukkit implementation)</i> for the EntityType-Tag lists)</li>
+     * <i>(Bukkit implementation)</i> for the EntityType-Tag lists</li>
      * <li>Regex via "r="</li>
      * <li>clean ENTITY-TYPE names with wildcards via "*"</li>
      * <li>clean ENTITY-TYPE names</li>
