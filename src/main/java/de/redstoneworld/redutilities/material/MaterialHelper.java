@@ -14,16 +14,7 @@ import java.util.regex.Pattern;
 public class MaterialHelper {
 
     /**
-     * This method returns a list of materials based on the Set of input strings. Various formats 
-     * of material specifications are supported here:
-     * 
-     * <li>Material-Tag via "tag=" (see <a href="https://jd.papermc.io/paper/1.21/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
-     * <a href="https://minecraft.wiki/w/Tag">Minecraft-Wiki</a> for the tag lists)</li>
-     * <li>Regex via "r="</li>
-     * <li>MATERIAL names with wildcards via "*"</li>
-     * <li>MATERIAL names</li>
-     * 
-     * Basic-Design by <a href="https://github.com/Phoenix616">Phoenix616</a>
+     * This method returns a list of Materials based on the Set of input strings.
      * 
      * @param inputSet (Set of Strings) the input String
      * @return (Set of Materials) the resulted Materials
@@ -41,11 +32,11 @@ public class MaterialHelper {
     }
     
     /**
-     * This method returns a list of materials based on the input string. Various formats 
-     * of material specifications are supported here:
+     * This method returns a list of Materials based on the input string. Various formats 
+     * of specifications are supported here:
      * 
      * <li>Material-Tag starting with "#" or "tag=" (see <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> and 
-     * <a href="https://minecraft.wiki/w/Tag">Minecraft-Wiki</a> for the tag lists)</li>
+     * <a href="https://minecraft.wiki/w/Tag#Block_tags_2">Minecraft-Wiki</a> for the Material Tag lists)</li>
      * <li>Regex via "r="</li>
      * <li>MATERIAL names with wildcards via "*"</li>
      * <li>MATERIAL names</li>
@@ -61,8 +52,6 @@ public class MaterialHelper {
         Set<Material> materials = EnumSet.noneOf(Material.class);
         
         // Material-Tag Definition:
-        // - https://jd.papermc.io/paper/1.21/org/bukkit/Tag.html
-        // - https://minecraft.wiki/w/Tag
         if ((input.startsWith("#")) || (input.startsWith("tag="))) {
             String nameSpace = "";
             String tagName = "";
@@ -92,7 +81,6 @@ public class MaterialHelper {
                 tag = Bukkit.getTag(Tag.REGISTRY_ITEMS, new NamespacedKey(nameSpace, tagName), Material.class);
             }
             
-            // https://jd.papermc.io/paper/1.21/com/destroystokyo/paper/MaterialTags.html
             if (tag == null) {
                 try {
                     Field field = MaterialTags.class.getField(tagName);
@@ -116,7 +104,7 @@ public class MaterialHelper {
                 }
             }
             
-        // Material-Name Definition:
+        // clean Material-Name Definition:
         } else {
             materials.add(Material.valueOf(input.toUpperCase()));
             
