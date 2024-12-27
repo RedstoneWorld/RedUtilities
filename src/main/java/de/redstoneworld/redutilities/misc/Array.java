@@ -11,10 +11,10 @@ public class Array {
      * @param prefix (String) prefix for the result String
      * @param array (String[]) the String array, which is to be merged
      * @param separator (String) the separator
-     * @return the result String; empty if array is empty
+     * @return the result String; the prefix only if the array is empty
      */
     public static String appendStringArray(String prefix, String[] array, String separator) {
-        if (array.length == 0) return "";
+        if (array.length == 0) return prefix;
 
         StringBuilder targetString = new StringBuilder(prefix + array[0]);
 
