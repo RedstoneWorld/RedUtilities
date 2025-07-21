@@ -1,7 +1,9 @@
 package de.redstoneworld.redutilities.misc;
 
+import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class Formatter {
 
@@ -55,48 +57,52 @@ public class Formatter {
 
     /**
      * This method outputs the rational number as a string.
-     * The decimal separator remains at the point (".") .
      * 
-     * @param floatValue the rational number
-     * @return (String) the formatted string.
+     * This method uses the provided {@link Locale} to format the number according to 
+     * its specific decimal separator, digit grouping logic and the grouping separator.
+     * 
+     * Example:
+     * <ul>
+     *   <li>Germany (de_DE): 12.345.678,9</li>
+     *   <li>US (en_US): 12,345,678.9</li>
+     *   <li>India (hi_IN): 1,23,45,678.9</li>
+     * </ul>
+     * 
+     * Large numeric values (such as values >= 10 million) are formatted in standard decimal form, 
+     * not scientific notation (e.g., "10000000" instead of "1.0E7"), ensuring readability.
+     * 
+     * @param locale (Locale) the Locale object for the specific micro-typography
+     * @param floatValue (float) the rational number
+     * @return (String) the formatted string
      */
-    public static String getRationalNumberMsg(float floatValue) {
-        return getRationalNumberMsg(floatValue, ".");
+    public static String getRationalNumberMsg(Locale locale, float floatValue) {
+        NumberFormat nf = NumberFormat.getNumberInstance(locale);
+        return nf.format(floatValue);
     }
-
+    
     /**
      * This method outputs the rational number as a string.
-     * The decimal separator remains at the point (".") .
      * 
-     * @param doubleValue the rational number
-     * @return (String) the formatted string.
-     */
-    public static String getRationalNumberMsg(Double doubleValue) {
-        return getRationalNumberMsg(doubleValue, ".");
-    }
-
-    /**
-     * This method outputs the rational number as a string.
-     * The decimal separator can also be specified.
+     * This method uses the provided {@link Locale} to format the number according to 
+     * its specific decimal separator, digit grouping logic and the grouping separator.
      * 
-     * @param floatValue the rational number
-     * @param decimalSeparator the decimal separator
-     * @return (String) the formatted string.
-     */
-    public static String getRationalNumberMsg(float floatValue, String decimalSeparator) {
-        return String.valueOf(floatValue).replace(".", decimalSeparator);
-    }
-
-    /**
-     * This method outputs the rational number as a string.
-     * The decimal separator can also be specified.
+     * Example:
+     * <ul>
+     *   <li>Germany (de_DE): 12.345.678,9</li>
+     *   <li>US (en_US): 12,345,678.9</li>
+     *   <li>India (hi_IN): 1,23,45,678.9</li>
+     * </ul>
      * 
-     * @param doubleValue the rational number
-     * @param decimalSeparator the decimal separator
-     * @return (String) the formatted string.
+     * Large numeric values (such as values >= 10 million) are formatted in standard decimal form, 
+     * not scientific notation (e.g., "10000000" instead of "1.0E7"), ensuring readability.
+     * 
+     * @param locale (Locale) the Locale object for the specific micro-typography
+     * @param doubleValue (double) the rational number
+     * @return (String) the formatted string
      */
-    public static String getRationalNumberMsg(Double doubleValue, String decimalSeparator) {
-        return String.valueOf(doubleValue).replace(".", decimalSeparator);
+    public static String getRationalNumberMsg(Locale locale, double doubleValue) {
+        NumberFormat nf = NumberFormat.getNumberInstance(locale);
+        return nf.format(doubleValue);
     }
     
 }
