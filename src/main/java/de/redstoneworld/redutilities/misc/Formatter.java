@@ -9,7 +9,7 @@ public class Formatter {
      * This method returns the date object in the desired formatting.
      *
      * @param date (Date) the target date object
-     * @param format (String) the format definition
+     * @param format (String) the format definition (based of the SimpleDateFormat)
      * @return (String) the formatted time string
      */
     public static String getTimeString(Date date, String format) {
@@ -21,7 +21,7 @@ public class Formatter {
      * This method returns the timestamp in the desired formatting.
      * 
      * @param timestamp (long) the target timestamp
-     * @param format (String) the format definition
+     * @param format (String) the format definition (based of the SimpleDateFormat)
      * @return (String) the formatted time string
      */
     public static String getTimeString(long timestamp, String format) {
