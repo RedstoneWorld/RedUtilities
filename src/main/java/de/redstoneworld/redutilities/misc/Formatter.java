@@ -26,9 +26,8 @@ public class Formatter {
      */
     public static String getTimeString(long timestamp, String format) {
         Date date = new Date(timestamp);
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
-        return simpleDateFormat.format(date);
+        
+        return getTimeString(date, format);
     }
 
     /**
