@@ -73,10 +73,16 @@ public class Formatter {
      * 
      * @param locale (Locale) the Locale object for the specific micro-typography
      * @param floatValue (float) the rational number
+     * @param grouping (boolean) Should the character grouping be used?
+     * @param minFractionDigits (int) The minimum number of decimal digits to show
      * @return (String) the formatted string
      */
-    public static String getRationalNumberMsg(Locale locale, float floatValue) {
+    public static String getRationalNumberMsg(Locale locale, float floatValue, boolean grouping, int minFractionDigits) {
         NumberFormat nf = NumberFormat.getNumberInstance(locale);
+        nf.setGroupingUsed(grouping);
+        nf.setMaximumFractionDigits(10);
+        nf.setMinimumFractionDigits(minFractionDigits);
+        
         return nf.format(floatValue);
     }
     
@@ -98,10 +104,16 @@ public class Formatter {
      * 
      * @param locale (Locale) the Locale object for the specific micro-typography
      * @param doubleValue (double) the rational number
+     * @param grouping (boolean) Should the character grouping be used?
+     * @param minFractionDigits (int) The minimum number of decimal digits to show
      * @return (String) the formatted string
      */
-    public static String getRationalNumberMsg(Locale locale, double doubleValue) {
+    public static String getRationalNumberMsg(Locale locale, double doubleValue, boolean grouping, int minFractionDigits) {
         NumberFormat nf = NumberFormat.getNumberInstance(locale);
+        nf.setGroupingUsed(grouping);
+        nf.setMaximumFractionDigits(10);
+        nf.setMinimumFractionDigits(minFractionDigits);
+        
         return nf.format(doubleValue);
     }
     
