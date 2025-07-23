@@ -20,7 +20,7 @@ public class LocaleHelper {
      * @param localeStr the locale string to parse
      * @return the corresponding Locale object
      */
-    public static Locale toLocale(String localeStr) {
+    public static Locale getLocale(String localeStr) {
         if (localeStr == null || localeStr.trim().isEmpty()) {
             return Locale.getDefault();
         }
