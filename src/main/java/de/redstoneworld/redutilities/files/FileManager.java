@@ -11,7 +11,7 @@ public class FileManager {
 
     private final File baseDir;
     private Logger logger;
-    
+
     public FileManager(File baseDir) {
         this.baseDir = baseDir;
     }
@@ -37,17 +37,17 @@ public class FileManager {
     public File copyDefaultFile(InputStream pluginResource, String resourceFileName) {
         return copyDefaultFile(pluginResource, baseDir, resourceFileName);
     }
-    
+
     public File copyDefaultFile(InputStream pluginResource, File dir, String resourceFileName) {
 
         File file = new File(dir, resourceFileName);
-        
+
         try {
 
             // Create default file if it doesn't exist
             if (!file.exists()) {
                 logger.log(Level.INFO, "Creating the default file: '" + resourceFileName + "'");
-                
+
                 FileOutputStream outputStream = new FileOutputStream(file);
                 pluginResource.transferTo(outputStream);
             }
@@ -55,7 +55,7 @@ public class FileManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         return file;
     }
 
@@ -64,13 +64,13 @@ public class FileManager {
     }
 
     public String getFileContent(File dir, String fileName) {
-        
+
         File file = new File(dir, fileName);
         return getFileContent(file);
     }
-    
+
     public String getFileContent(File file) {
-        
+
         String content = "";
 
         try {
@@ -88,15 +88,15 @@ public class FileManager {
     public File saveNewFile(String newFileName, String content) {
         return saveNewFile(baseDir, newFileName, content);
     }
-    
+
     public File saveNewFile(File dir, String newFileName, String content) {
-        
+
         File newFile = new File(dir, newFileName);
 
         try {
             if (!newFile.exists()) {
                 logger.log(Level.INFO, "Creating the file: '" + newFileName + "'");
-                
+
                 FileOutputStream outputStream = new FileOutputStream(newFile);
                 if (!content.isBlank()) outputStream.write(content.getBytes());
             }
@@ -104,7 +104,7 @@ public class FileManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
         return newFile;
     }
 
@@ -115,5 +115,5 @@ public class FileManager {
     public Logger getLogger() {
         return logger;
     }
-    
+
 }

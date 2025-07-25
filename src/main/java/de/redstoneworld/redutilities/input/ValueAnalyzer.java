@@ -29,5 +29,5 @@ public class ValueAnalyzer {
         if (Bukkit.getWorld(cmdInput) != null) return true;
         return false;
     }
-    
+
 }

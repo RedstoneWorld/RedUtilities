@@ -55,8 +55,7 @@ public class ActionLogger {
                 writer.write(getDateAndTime() + " [" + serverName + " | " + modul + "]: " + message);
                 writer.newLine();
                 writer.close();
-            }
-            catch(IOException ioe) {
+            } catch (IOException ioe) {
                 // https://www.tutorialspoint.com/Different-ways-to-print-exception-messages-in-Java
                 ioe.printStackTrace();
             }
@@ -73,8 +72,7 @@ public class ActionLogger {
                 writer.write(message);
                 writer.newLine();
                 writer.close();
-            }
-            catch(IOException ioe) {
+            } catch (IOException ioe) {
                 // https://www.tutorialspoint.com/Different-ways-to-print-exception-messages-in-Java
                 ioe.printStackTrace();
             }
@@ -94,8 +92,7 @@ public class ActionLogger {
 
         try {
             file = new File(workPath + "/" + filename);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
 

@@ -4,13 +4,13 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.Configuration;
 
 public class FileReader {
-    
+
     Configuration configuration;
-    
+
     // Configuration sections following the standard structure of the RedstoneWorld plugins.
     private String configPartMessages = "messages";
     private String configPartFeatures = "features";
-    
+
     public void setConfig(Configuration configuration) {
         this.configuration = configuration;
     }
@@ -21,7 +21,7 @@ public class FileReader {
 
     /**
      * This method sets the configuration part for messages.
-     * 
+     *
      * @param configPartMessages (String) config part
      */
     public void setConfigPartMessages(String configPartMessages) {
@@ -51,7 +51,6 @@ public class FileReader {
      *
      * @param key YAML key
      * @param args placeholder without "%" and value for the placeholder
-     *
      * @return the config messages (String)
      */
     public String getLang(String key, String... args) {
@@ -65,7 +64,6 @@ public class FileReader {
      * @param key YAML key
      * @param colorCodeReplace should the native color-code identifier "§" be replaced with "&amp;"
      * @param args placeholder without "%" and value for the placeholder
-     *
      * @return the config messages (String)
      */
     public String getLang(Boolean colorCodeReplace, String key, String... args) {
@@ -90,5 +88,5 @@ public class FileReader {
     public String getStringOption(String key) {
         return configuration.getString(configPartFeatures + "." + key);
     }
-    
+
 }

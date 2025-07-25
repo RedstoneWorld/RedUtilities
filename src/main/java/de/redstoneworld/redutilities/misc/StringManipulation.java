@@ -11,5 +11,5 @@ public class StringManipulation {
     public static String removeWhitespaceEnd(String input) {
         return input.replaceAll("\\s+$", "");
     }
-    
+
 }

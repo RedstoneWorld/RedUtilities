@@ -7,9 +7,9 @@ import org.bukkit.entity.Player;
 public class Messages {
 
     /**
-     * This method sends the desired message to the player as an 
+     * This method sends the desired message to the player as an
      * <a href="https://minecraft.wiki/w/Action_bar" target="_blank">Actionbar</a> message.
-     * 
+     *
      * @param player (Player) the target player
      * @param message (String) the Actionbar message
      */
@@ -18,5 +18,5 @@ public class Messages {
         player.sendMessage(ChatMessageType.ACTION_BAR, TextComponent.fromLegacyText(message));
 
     }
-    
+
 }

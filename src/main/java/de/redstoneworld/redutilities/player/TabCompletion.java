@@ -7,11 +7,8 @@ import java.util.Collection;
 
 public class TabCompletion {
     
-    public TabCompletion() {
-    }
-
     /**
-     * Method for creating tab completion on BungeeCord side. On Bukkit side 
+     * Method for creating tab completion on BungeeCord side. On Bukkit side
      * the existing methode "org.bukkit.util.StringUtil" should be used.
      */
     public static <T extends Collection<? super String>> @NotNull T copyPartialMatches(@NotNull String token, @NotNull Iterable<String> originals, @NotNull T collection) throws UnsupportedOperationException, IllegalArgumentException {

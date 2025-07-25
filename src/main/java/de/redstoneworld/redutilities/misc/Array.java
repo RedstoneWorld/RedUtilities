@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Array {
 
     /**
-     * This method merges the Strings of a String array and outputs them as 
+     * This method merges the Strings of a String array and outputs them as
      * a single String. The individual parts are connected with the separator.
      *
      * @param prefix (String) prefix for the result String
@@ -52,5 +52,5 @@ public class Array {
         String mergedString = appendStringArray("", array1, " ") + appendStringArray(" ", array2, " ");
         return mergedString.split(" ");
     }
-    
+
 }

@@ -15,9 +15,9 @@ public class Calculation {
     }
 
     /**
-     * This method rounds up the input to the desired accuracy. The normal 
+     * This method rounds up the input to the desired accuracy. The normal
      * round function of Math always rounds up or down to "1".
-     * 
+     *
      * @param input (double) value
      * @param x (double) rounding accuracy (e.g. "0.5")
      * @return (double) the rounded value

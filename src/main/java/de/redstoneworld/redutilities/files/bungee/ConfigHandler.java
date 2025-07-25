@@ -18,36 +18,36 @@ public class ConfigHandler {
     private Configuration config;
     private final Plugin plugin;
     private File configFile;
-    
+
     public ConfigHandler(Plugin plugin) {
         instance = this;
-        
+
         this.plugin = plugin;
         load("config.yml");
     }
 
     public ConfigHandler(Plugin plugin, String fileName) {
         instance = this;
-        
+
         this.plugin = plugin;
         load(fileName);
     }
 
     private void load(String fileName) {
         configFile = new File(plugin.getDataFolder(), fileName);
-        
+
         try {
             // Create Data folder
             if (!plugin.getDataFolder().exists()) {
                 plugin.getLogger().log(Level.INFO, "Creating the plugin folder");
-                
+
                 plugin.getDataFolder().mkdirs();
             }
 
             // Copy default config if it doesn't exist
             if (!configFile.exists()) {
                 plugin.getLogger().log(Level.INFO, "Copy default file: " + fileName);
-                
+
                 FileOutputStream outputStream = new FileOutputStream(configFile);
                 InputStream in = plugin.getResourceAsStream(fileName);
                 in.transferTo(outputStream);
@@ -56,7 +56,7 @@ public class ConfigHandler {
             // Load config
             config = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);
             plugin.getLogger().log(Level.INFO, "Loaded file: " + fileName);
-            
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -65,7 +65,7 @@ public class ConfigHandler {
     public void saveConfig() {
         String fileName = configFile.getName();
         plugin.getLogger().log(Level.INFO, "Saving file: " + fileName);
-        
+
         try {
             ConfigurationProvider.getProvider(YamlConfiguration.class).save(config, configFile);
         } catch (IOException e) {
@@ -76,7 +76,7 @@ public class ConfigHandler {
     public void reloadConfig() {
         String fileName = configFile.getName();
         plugin.getLogger().log(Level.INFO, "Reloading file: " + fileName);
-        
+
         load(configFile.getName());
     }
 

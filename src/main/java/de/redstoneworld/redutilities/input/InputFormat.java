@@ -17,7 +17,7 @@ public class InputFormat {
 
     /**
      * This method validate the input string and check if it's a
-     * valid natural number without a signum of a permutation, and 
+     * valid natural number without a signum of a permutation, and
      * it's also greater than zero.
      *
      * @return 'true' if the input is a positive natural number
@@ -46,9 +46,9 @@ public class InputFormat {
 
     /**
      * This method validate the input string and check if it's a
-     * valid rational number. Flexible inputs are allowed, which 
+     * valid rational number. Flexible inputs are allowed, which
      * improves the usability.
-     * 
+     *
      * (Input-Formatter: 'Formatter.getRationalNumberValue')
      *
      * @return 'true' if the input is a rational number
@@ -59,5 +59,5 @@ public class InputFormat {
         }
         return false;
     }
-    
+
 }
