@@ -48,9 +48,12 @@ public class Array {
 
         if (array1.length == 0) return array2;
         if (array2.length == 0) return array1;
-
-        String mergedString = appendStringArray("", array1, " ") + appendStringArray(" ", array2, " ");
-        return mergedString.split(" ");
+        
+        String splitSeparator = ":::redutilities-split:::";
+        
+        String mergedString = appendStringArray("", array1, splitSeparator) + splitSeparator 
+                + appendStringArray("", array2, splitSeparator);
+        return mergedString.split(splitSeparator);
     }
 
 }
