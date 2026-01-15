@@ -9,11 +9,14 @@ public class LocaleHelper {
      * into a Java 'Locale' object.
      *
      * Supports both underscore "_" and hyphen "-" as separators.
+     * 
      * Examples:
-     * "de"             -> new Locale("de")
-     * "de_DE"          -> new Locale("de", "DE")
-     * "en-US"          -> new Locale("en", "US")
-     * "fr_CA_POSIX"    -> new Locale("fr", "CA", "POSIX")
+     * <ul>
+     *   <li>"de"             -> new Locale("de")</li>
+     *   <li>"de_DE"          -> new Locale("de", "DE")</li>
+     *   <li>"en-US"          -> new Locale("en", "US")</li>
+     *   <li>"fr_CA_POSIX"    -> new Locale("fr", "CA", "POSIX")</li>
+     * </ul>
      *
      * If the input is null or empty, the system default locale is returned.
      *
