@@ -15,15 +15,31 @@ public class Calculation {
     }
 
     /**
-     * This method rounds up the input to the desired accuracy. The normal
-     * round function of Math always rounds up or down to "1".
-     *
-     * @param input (double) value
-     * @param x (double) rounding accuracy (e.g. "0.5")
+     * This method rounds up the input to the desired accuracy. The accuracy 
+     * value specifies the step sizes between which rounding takes place.
+     * 
+     * <ul>
+     *   <li>The value is always rounded to the nearest multiple of {@code step}.</li>
+     *   <li>Ties (values exactly halfway between two multiples) are always rounded up,
+     *       following the behavior of {@link Math#round(double)}.</li>
+     *   <li>Smaller values of {@code step} result in finer rounding granularity.</li>
+     * </ul>
+     * 
+     * Examples:
+     * <ul>
+     *   <li>step = 1.0      => 0.0; 1.0</li>
+     *   <li>step = 0.5      => 0.0; 0.5; 1.0</li>
+     *   <li>step = 0.25     => 0.0; 0.25; 0.5; 0.75; 1.0</li>
+     *   <li>step = 0.1      => 0.0; 0.1; ... 0.9; 1.0</li>
+     *   <li>step = 0.05     => 0.0; 0.05; ... 0.95; 1.0</li>
+     * <ul>
+     * 
+     * @param input (double) the target value for the rounding
+     * @param step (double) rounding accuracy
      * @return (double) the rounded value
      */
-    public static double roundToX(double input, double x) {
-        return Math.round(input / x) * x;
+    public static double roundToX(double input, double step) {
+        return Math.round(input / step) * step;
     }
 
     /**
