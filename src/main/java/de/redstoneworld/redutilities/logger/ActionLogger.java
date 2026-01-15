@@ -44,39 +44,28 @@ public class ActionLogger {
         return instance;
     }
 
-    // source: https://wiki.byte-welt.net/wiki/Text_in_eine_Datei_schreiben_(Java)
-
+    public void log(String message) {
+        log("Main", message);
+    }
+    
     public void log(String modul, String message) {
         if (logActions) {
-            File file = getFile("action.log");
-
-            try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-                writer.write(getDateAndTime() + " [" + serverName + " | " + modul + "]: " + message);
-                writer.newLine();
-                writer.close();
-            } catch (IOException ioe) {
-                // https://www.tutorialspoint.com/Different-ways-to-print-exception-messages-in-Java
-                ioe.printStackTrace();
-            }
-
+            writeLogMessage(getDateAndTime() + " [" + serverName + " | " + modul + "]: " + message);
         }
     }
+    
+    private void writeLogMessage(String message) {
+        // source: https://wiki.byte-welt.net/wiki/Text_in_eine_Datei_schreiben_(Java)
+        
+        File file = getFile("action.log");
 
-    public void log(String message) {
-        if (logActions) {
-            File file = getFile("action.log");
-
-            try {
-                BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-                writer.write(message);
-                writer.newLine();
-                writer.close();
-            } catch (IOException ioe) {
-                // https://www.tutorialspoint.com/Different-ways-to-print-exception-messages-in-Java
-                ioe.printStackTrace();
-            }
-
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
+            writer.write(message);
+            writer.newLine();
+            writer.close();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
         }
     }
 
