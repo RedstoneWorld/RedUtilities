@@ -32,7 +32,7 @@ public class Calculation {
      *   <li>step = 0.25     => 0.0; 0.25; 0.5; 0.75; 1.0</li>
      *   <li>step = 0.1      => 0.0; 0.1; ... 0.9; 1.0</li>
      *   <li>step = 0.05     => 0.0; 0.05; ... 0.95; 1.0</li>
-     * <ul>
+     * </ul>
      * 
      * @param input (double) the target value for the rounding
      * @param step (double) rounding accuracy
