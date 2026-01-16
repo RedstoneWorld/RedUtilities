@@ -36,10 +36,9 @@ public class MaterialHelper {
      * of specifications are supported here:
      *
      * <ul>
-     *   <li>Material-Tag starting with "#" or "tag=" - see <a href="https://minecraft.wiki/w/Block_tag_(Java_Edition)">Block Tag list</a>
-     *   and <a href="https://minecraft.wiki/w/Entity_type_tag_(Java_Edition)">Entity Tag list</a> for the Vanilla tags, 
-     *   and <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> for the Bukkit implementation 
-     *   of the Material and EntityType Tags</li>
+     *   <li>Material Tag starting with "#" or "tag=" - see <a href="https://minecraft.wiki/w/Block_tag_(Java_Edition)">Minecraft-Wiki Article</a> 
+     *   for the Vanilla Material Tags and <a href="https://jd.papermc.io/paper/1.21.1/org/bukkit/Tag.html">PaperMC Java-Doc</a> for the Bukkit 
+     *   implementation</li>
      *   <li>Regex via "r="</li>
      *   <li>clean MATERIAL names with wildcards via "*"</li>
      *   <li>clean MATERIAL names</li>
