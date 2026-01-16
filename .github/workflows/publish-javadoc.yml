@@ -1,21 +1,35 @@
-name: Deploy Javadoc
+name: Publish Javadoc
 
 on:
   push:
     branches:
-      - master
       - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  publish:
+  javadoc:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy JavaDoc 🚀
-        uses: MathieuSoysal/Javadoc-publisher.yml@v2.4.0
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          javadoc-branch: javadoc
-          java-version: 17
-          target-folder: javadoc # url will be https://<username>.github.io/<repo>/javadoc, This can be left as nothing to generate javadocs in the root folder.
-          project: maven # or gradle
-          # subdirectories: moduleA moduleB #for subdirectories support, needs to be run with custom command
+          distribution: temurin
+          java-version: 21
+
+      - name: Generate Javadoc (Maven Site)
+        run: mvn -B site
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: target/site
