@@ -1,6 +1,8 @@
 # RedUtilities
 
-RedUtilities is a small Java toolkit for Minecraft plugin development. The preparation of the methods was designed for the application of RedstoneWorld plugins, but can be useful with any pattern.
+RedUtilities is a small Java toolkit for **Minecraft PaperMC plugin development**. The preparation of the methods was designed for the application of [RedstoneWorld](https://redstoneworld.de) plugins, but can be useful with any pattern.
+
+[![Developed by RedstoneWorld](https://redstoneworld.de/bilder/kooperation/RedstoneWorld-Logo_small.png)](https://redstoneworld.de)
 
 # Development with RedUtilities
 
@@ -13,11 +15,20 @@ RedUtilities is a small Java toolkit for Minecraft plugin development. The prepa
 Add the following to your Java project `pom.xml` file:
 
 ```xml
-<dependency>
+<repositories>
+  <repository>
+    <id>redstoneworld-RedUtilities</id>
+    <url>https://dl.cloudsmith.io/public/redstoneworld/RedUtilities/maven/</url>
+  </repository>
+</repositories>
+
+<repositories>
+  <dependency>
     <groupId>de.redstoneworld.redutilities</groupId>
     <artifactId>redutilities</artifactId>
     <version>%version%</version>
-</dependency>
+  </dependency>
+</repositories>
 ```
 
 ## Usage with Gradle
@@ -26,17 +37,17 @@ Add the following to your Java project `build.gradle` file:
 
 ```text
 repositories {
-    maven {
-        name = 'cloudsmith'
-        url = 'https://dl.cloudsmith.io/public/redstoneworld/RedUtilities/maven/'
-    }
+  maven {
+    url "https://dl.cloudsmith.io/public/redstoneworld/RedUtilities/maven/"
+  }
 }
 
 dependencies {
-    implementation 'de.redstoneworld.redutilities:redutilities:%version%'
+  implementation 'de.redstoneworld.redutilities:redutilities:%version%'
 }
 ```
 
-# Javadoc
+# Documentation
 
-You can find the Javadoc of RedUtilities [here](https://redstoneworld.github.io/RedUtilities/javadoc).
+- [Java-Doc](https://redstoneworld.github.io/RedUtilities/apidocs)
+- [Project Dependencies](https://redstoneworld.github.io/RedUtilities/dependencies.html)
