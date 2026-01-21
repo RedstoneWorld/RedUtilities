@@ -39,6 +39,16 @@ public class Calculation {
      * @return (double) the rounded value
      */
     public static double roundToX(double input, double step) {
+        
+/*        
+        // Alternative:
+        
+        BigDecimal.valueOf(input)
+                  .setScale(2, BigDecimal.ROUND_HALF_UP)
+                  .doubleValue();
+        
+        */
+        
         return Math.round(input / step) * step;
     }
 
