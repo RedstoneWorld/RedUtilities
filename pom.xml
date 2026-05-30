@@ -46,11 +46,11 @@
     <distributionManagement>
         <snapshotRepository>
             <id>cloudsmith</id>
-            <url>https://maven.cloudsmith.io/redstoneworld/RedUtilities/</url>
+            <url>https://maven.cloudsmith.io/redstoneworld/redutilities/</url>
         </snapshotRepository>
         <repository>
             <id>cloudsmith</id>
-            <url>https://maven.cloudsmith.io/redstoneworld/RedUtilities/</url>
+            <url>https://maven.cloudsmith.io/redstoneworld/redutilities/</url>
         </repository>
     </distributionManagement>
 

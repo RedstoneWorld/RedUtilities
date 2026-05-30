@@ -8,7 +8,7 @@ RedUtilities is a small Java toolkit for **Minecraft PaperMC plugin development*
 
 **Note:** Replace `%version%` with the latest version of RedUtilities:
 
-[![Latest version of 'redutilities' @ Cloudsmith](https://api-prd.cloudsmith.io/v1/badges/version/redstoneworld/RedUtilities/maven/redutilities/latest/a=noarch;xg=de.redstoneworld.redutilities/?render=true&show_latest=true)](https://cloudsmith.io/~redstoneworld/repos/RedUtilities/packages/detail/maven/redutilities/latest/a=noarch;xg=de.redstoneworld.redutilities/)
+[![Latest version of 'redutilities' @ Cloudsmith](https://api-prd.cloudsmith.io/v1/badges/version/redstoneworld/redutilities/maven/redutilities/latest/a=noarch;xg=de.redstoneworld.redutilities/?render=true&show_latest=true)](https://cloudsmith.io/~redstoneworld/repos/redutilities/packages/detail/maven/redutilities/latest/a=noarch;xg=de.redstoneworld.redutilities/)
 
 ## Usage with Maven
 
@@ -17,8 +17,8 @@ Add the following to your Java project `pom.xml` file:
 ```xml
 <repositories>
   <repository>
-    <id>redstoneworld-RedUtilities</id>
-    <url>https://dl.cloudsmith.io/public/redstoneworld/RedUtilities/maven/</url>
+    <id>redstoneworld-redutilities</id>
+    <url>https://dl.cloudsmith.io/public/redstoneworld/redutilities/maven/</url>
   </repository>
 </repositories>
 
@@ -38,7 +38,7 @@ Add the following to your Java project `build.gradle` file:
 ```text
 repositories {
   maven {
-    url "https://dl.cloudsmith.io/public/redstoneworld/RedUtilities/maven/"
+    url "https://dl.cloudsmith.io/public/redstoneworld/redutilities/maven/"
   }
 }
 
